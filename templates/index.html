@@ -65,6 +65,8 @@ border-radius:10px;
 
 cursor:pointer;
 
+margin-top:10px;
+
 }
 
 button:hover{
@@ -73,25 +75,93 @@ background:#f57c00;
 
 }
 
+.drive-button{
+
+display:block;
+
+width:100%;
+
+padding:15px;
+
+background:#1565C0;
+
+color:white;
+
+font-size:18px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+margin-bottom:20px;
+
+box-sizing:border-box;
+
+}
+
+.drive-button:hover{
+
+background:#0d47a1;
+
+}
+
+hr{
+
+margin:25px 0;
+
+border:0;
+
+border-top:1px solid #ddd;
+
+}
+
 </style>
 
 </head>
+
 
 <body>
 
 <div class="container">
 
+
 <h1>🖨️ A TO Z STATIONERY</h1>
 
 <p>Professional Printing & Document Services</p>
 
+
+<!-- GOOGLE FORM UPLOAD BUTTON -->
+
+<a class="drive-button" 
+href="https://forms.gle/ukAjVgJc65WEA1ME9" 
+target="_blank">
+
+📄 Upload Print Files
+
+</a>
+
+
+<p>
+Upload your files using the button above.
+</p>
+
+
+<hr>
+
+
+<!-- OLD DIRECT UPLOAD FORM -->
+
 <form action="/upload" method="POST" enctype="multipart/form-data">
+
 
 <input type="text" placeholder="Customer Name">
 
+
 <input type="text" placeholder="WhatsApp Number">
 
+
 <input type="file" name="file">
+
 
 <select>
 
@@ -101,6 +171,7 @@ background:#f57c00;
 
 </select>
 
+
 <select>
 
 <option>Black & White</option>
@@ -109,9 +180,12 @@ background:#f57c00;
 
 </select>
 
+
 <input type="number" value="1">
 
+
 <textarea placeholder="Special Instructions"></textarea>
+
 
 <button type="submit">
 
@@ -119,9 +193,12 @@ background:#f57c00;
 
 </button>
 
+
 </form>
 
+
 </div>
+
 
 </body>
 
