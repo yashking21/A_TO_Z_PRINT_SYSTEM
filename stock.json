@@ -1,0 +1,22 @@
+[
+    {
+        "name": "A4 Paper",
+        "status": "In Stock"
+    },
+    {
+        "name": "A3 Paper",
+        "status": "In Stock"
+    },
+    {
+        "name": "PVC ID Cards",
+        "status": "In Stock"
+    },
+    {
+        "name": "Glossy Photo Paper",
+        "status": "Out of Stock"
+    },
+    {
+        "name": "Lamination Sheets",
+        "status": "In Stock"
+    }
+]

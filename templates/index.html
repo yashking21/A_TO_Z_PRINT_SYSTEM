@@ -1,204 +1,364 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>A TO Z STATIONERY</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-font-family:Arial,sans-serif;
-background:#f2f6ff;
+*{
 margin:0;
 padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
-.container{
-max-width:500px;
-margin:40px auto;
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(0,0,0,0.15);
+body{
+background:#07142d;
+color:white;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,.35);
+backdrop-filter:blur(12px);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+color:#FFD600;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#FFD600;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+background:
+linear-gradient(rgba(7,20,45,.75),rgba(7,20,45,.85)),
+url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:65px;
+font-weight:800;
+color:#FFD600;
+}
+
+.hero h2{
+font-size:34px;
+margin:15px 0;
+}
+
+.hero p{
+font-size:18px;
+max-width:700px;
+margin:auto;
+line-height:1.8;
+}
+
+.upload-btn{
+display:inline-block;
+margin-top:35px;
+padding:18px 35px;
+background:#ff9800;
+color:white;
+text-decoration:none;
+border-radius:12px;
+font-size:20px;
+font-weight:600;
+transition:.3s;
+}
+
+.upload-btn:hover{
+background:#f57c00;
+transform:scale(1.05);
+}
+
+.services{
+padding:80px 8%;
+background:#f5f7fb;
+color:#222;
 text-align:center;
 }
 
-h1{
+.services h2{
+font-size:40px;
+margin-bottom:40px;
 color:#1565C0;
-margin-bottom:5px;
 }
 
-p{
-color:#666;
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
-input,select,textarea{
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.3s;
+}
 
-width:100%;
-padding:12px;
-margin-top:10px;
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 35px rgba(0,0,0,.2);
+}
+
+.card h3{
 margin-bottom:15px;
-
-border-radius:8px;
-border:1px solid #ccc;
-
-box-sizing:border-box;
-
+color:#1565C0;
 }
 
-button{
+.card p{
+color:#666;
+line-height:1.6;
+}
 
-width:100%;
-
-padding:15px;
-
-background:#ff9800;
-
+.stock{
+padding:80px 8%;
+background:#07142d;
 color:white;
-
-font-size:18px;
-
-border:none;
-
-border-radius:10px;
-
-cursor:pointer;
-
-margin-top:10px;
-
+text-align:center;
 }
 
-button:hover{
-
-background:#f57c00;
-
+.stock h2{
+font-size:40px;
+margin-bottom:40px;
+color:#FFD600;
 }
 
-.drive-button{
+.stock-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
 
-display:block;
+.stock-card{
+background:#10264d;
+padding:25px;
+border-radius:18px;
+transition:.3s;
+}
 
-width:100%;
+.stock-card:hover{
+transform:translateY(-8px);
+}
 
-padding:15px;
+.in-stock{
+display:inline-block;
+margin-top:15px;
+padding:8px 18px;
+background:#16a34a;
+border-radius:50px;
+font-weight:bold;
+}
 
-background:#1565C0;
+.out-stock{
+display:inline-block;
+margin-top:15px;
+padding:8px 18px;
+background:#dc2626;
+border-radius:50px;
+font-weight:bold;
+}
 
-color:white;
+.contact{
+padding:80px 8%;
+background:#f5f7fb;
+color:#222;
+text-align:center;
+}
 
-font-size:18px;
-
-border-radius:10px;
-
-text-decoration:none;
-
+.contact h2{
+font-size:40px;
+color:#1565C0;
 margin-bottom:20px;
-
-box-sizing:border-box;
-
 }
 
-.drive-button:hover{
-
-background:#0d47a1;
-
+.contact p{
+font-size:18px;
+margin:10px 0;
 }
 
-hr{
-
-margin:25px 0;
-
-border:0;
-
-border-top:1px solid #ddd;
-
+footer{
+background:#041024;
+padding:20px;
+text-align:center;
+font-size:15px;
 }
 
 </style>
 
 </head>
 
-
 <body>
 
-<div class="container">
+<nav>
 
+<div class="logo">🖨️ A TO Z STATIONERY</div>
 
-<h1>🖨️ A TO Z STATIONERY</h1>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#stock">Stock</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-<p>Professional Printing & Document Services</p>
+</nav>
 
+<section class="hero">
 
-<!-- GOOGLE FORM UPLOAD BUTTON -->
+<div>
 
-<a class="drive-button" 
-href="https://forms.gle/ukAjVgJc65WEA1ME9" 
+<h1>A TO Z STATIONERY</h1>
+
+<h2>Professional Printing Services</h2>
+
+<p>
+High Quality Printing • Xerox • PVC ID Cards • Lamination • Spiral Binding • Photo Printing
+</p>
+
+<a class="upload-btn"
+href="https://forms.gle/PAGwiftcW28VdEju7"
 target="_blank">
 
 📄 Upload Print Files
 
 </a>
 
+</div>
 
-<p>
-Upload your files using the button above.
-</p>
+</section>
+<section id="services" class="services">
 
+<h2>🖨️ Our Professional Services</h2>
 
-<hr>
+<div class="service-grid">
 
+<div class="card">
+<h3>📄 Xerox</h3>
+<p>Fast black & white and colour photocopy services.</p>
+</div>
 
-<!-- OLD DIRECT UPLOAD FORM -->
+<div class="card">
+<h3>🎨 Colour Printing</h3>
+<p>High-quality colour printing for projects and documents.</p>
+</div>
 
-<form action="/upload" method="POST" enctype="multipart/form-data">
+<div class="card">
+<h3>🪪 PVC ID Cards</h3>
+<p>Professional PVC ID card printing.</p>
+</div>
 
+<div class="card">
+<h3>📚 Spiral Binding</h3>
+<p>Strong spiral binding for reports and notebooks.</p>
+</div>
 
-<input type="text" placeholder="Customer Name">
+<div class="card">
+<h3>✨ Lamination</h3>
+<p>Glossy and matte lamination available.</p>
+</div>
 
-
-<input type="text" placeholder="WhatsApp Number">
-
-
-<input type="file" name="file">
-
-
-<select>
-
-<option>A4 Paper</option>
-
-<option>A3 Paper</option>
-
-</select>
-
-
-<select>
-
-<option>Black & White</option>
-
-<option>Color Printing</option>
-
-</select>
-
-
-<input type="number" value="1">
-
-
-<textarea placeholder="Special Instructions"></textarea>
-
-
-<button type="submit">
-
-🚀 Upload Files
-
-</button>
-
-
-</form>
-
+<div class="card">
+<h3>🖼️ Photo Printing</h3>
+<p>High-quality photo printing for your favourite memories.</p>
+</div>
 
 </div>
 
+</section>
+
+<section id="stock" class="stock">
+
+<h2>📦 Stock Availability</h2>
+
+<div class="stock-grid">
+
+{% for item in stock %}
+
+<div class="stock-card">
+
+<h3>{{ item.name }}</h3>
+
+{% if item.status == "In Stock" %}
+
+<span class="in-stock">🟢 In Stock</span>
+
+{% else %}
+
+<span class="out-stock">🔴 Out of Stock</span>
+
+{% endif %}
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2>📞 Contact Us</h2>
+
+<p><strong>A TO Z STATIONERY</strong></p>
+
+<p>📍 Visit our shop for all your printing and stationery needs.</p>
+
+<p>📱 WhatsApp: Add your number here</p>
+
+<p>🕒 Open: Monday - Sunday</p>
+
+</section>
+
+<footer>
+
+© 2026 A TO Z STATIONERY • All Rights Reserved
+
+</footer>
 
 </body>
 
